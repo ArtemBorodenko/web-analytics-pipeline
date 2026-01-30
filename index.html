@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Marketing Website</title>
+</head>
+<body>
+  <h1>Analytics Demo Website</h1>
+  <p>Test website for web analytics project.</p>
+
+  <button id="cta-button">Contact Us</button>
+
+  <form action="thank_you.html" method="GET">
+    <input type="email" placeholder="Email" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("cta-button")
+      .addEventListener("click", () => {
+        console.log("CTA clicked");
+      });
+  </script>
+</body>
+</html>
