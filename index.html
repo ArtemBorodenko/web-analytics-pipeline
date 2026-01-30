@@ -20,16 +20,34 @@
 
   <button id="cta-button">Contact Us</button>
 
-  <form action="thank_you.html" method="GET">
-    <input type="email" placeholder="Email" required />
-    <button type="submit">Submit</button>
-  </form>
-
+  <form id="lead-form" action="thank_you.html" method="GET">
+  <input type="email" placeholder="Email" required />
+  <button type="submit">Submit</button>
+</form>
+  
   <script>
-    document.getElementById("cta-button")
-      .addEventListener("click", () => {
-        console.log("CTA clicked");
+  document.getElementById("lead-form")
+    .addEventListener("submit", function () {
+
+      gtag('event', 'form_submit', {
+        form_name: 'lead_form',
+        page_location: window.location.href
       });
-  </script>
+
+    });
+</script>
+
+<script>
+  document.getElementById("cta-button")
+    .addEventListener("click", () => {
+
+      gtag('event', 'cta_click', {
+        button_text: 'Contact Us',
+        page_location: window.location.href
+      });
+
+    });
+</script>
+  
 </body>
 </html>
